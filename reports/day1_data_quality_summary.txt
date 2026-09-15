@@ -1,0 +1,11 @@
+BLUESTOCK FINTECH — CAPSTONE PROJECT I: MUTUAL FUND ANALYTICS
+Day 1 Data Quality Summary
+============================================================
+
+Files loaded: 11
+
+Anomalies found:
+  - 04_monthly_sip_inflows.csv: missing values -> {'yoy_growth_pct': 12}
+
+AMFI code validation (fund_master vs nav_history):
+  - All 40 scheme codes in fund_master have matching entries in nav_history (40 unique codes present there). No missing codes found.
