@@ -1,0 +1,98 @@
+BLUESTOCK FINTECH — CAPSTONE PROJECT I: MUTUAL FUND ANALYTICS
+Day 2 — Sample Results for All 10 Analytical Queries
+============================================================
+
+Query: Bluestock Fintech — Capstone Project I: Mutual Fund Analytics
+
+
+Query: 1. Top 5 funds by AUM
+scheme_name | fund_house | aum_crore
+Mirae Asset Emerging Bluechip Fund - Regular - Growth | Mirae Asset MF | 49046.0
+Kotak Emerging Equity Fund - Regular - Growth | Kotak Mahindra MF | 47469.0
+Nippon India Small Cap Fund - Regular - Growth | Nippon India MF | 43630.0
+DSP Top 100 Equity Fund - Regular - Growth | DSP Mutual Fund | 41828.0
+UTI Mid Cap Fund - Regular - Growth | UTI Mutual Fund | 41728.0
+
+Query: 2. Average NAV per month, per scheme (example: shown for one scheme code, 119551)
+month | amfi_code | avg_nav
+2022-01 | 119551 | 55.09
+2022-02 | 119551 | 52.48
+2022-03 | 119551 | 50.84
+2022-04 | 119551 | 52.04
+2022-05 | 119551 | 51.89
+2022-06 | 119551 | 52.68
+... (53 total rows)
+
+Query: 3. SIP inflow YoY growth trend (most recent 12 months with data)
+month | sip_inflow_crore | yoy_growth_pct
+2025-12 | 31002.0 | 17.17
+2025-11 | 30200.0 | 19.27
+2025-10 | 29529.0 | 16.61
+2025-09 | 29361.0 | 19.8
+2025-08 | 28265.0 | 20.04
+2025-07 | 28464.0 | 22.0
+... (12 total rows)
+
+Query: 4. Transactions by state (total amount + count)
+state | num_transactions | total_amount_inr
+Punjab | 2965 | 315780459
+Tamil Nadu | 2806 | 315177237
+Madhya Pradesh | 2931 | 308312493
+Rajasthan | 2577 | 298645822
+Gujarat | 2780 | 298358940
+West Bengal | 2748 | 297182514
+... (12 total rows)
+
+Query: 5. Funds with expense_ratio_pct < 1%
+scheme_name | fund_house | category | expense_ratio_pct
+Nippon India Gilt Securities Fund - Regular - Growth | Nippon India MF | Gilt | 0.55
+HDFC Short Term Debt Fund - Regular - Growth | HDFC Mutual Fund | Short Duration | 0.56
+Kotak Liquid Fund - Regular - Growth | Kotak Mahindra MF | Liquid | 0.6
+SBI Bluechip Fund - Direct Plan - Growth | SBI Mutual Fund | Large Cap | 0.66
+Nippon India Large Cap Fund - Direct - Growth | Nippon India MF | Large Cap | 0.72
+SBI Small Cap Fund - Direct Plan - Growth | SBI Mutual Fund | Small Cap | 0.72
+... (14 total rows)
+
+Query: 6. Top 10 funds by 3-year return
+scheme_name | fund_house | return_3yr_pct | sharpe_ratio
+SBI Small Cap Fund - Regular Plan - Growth | SBI Mutual Fund | 23.39 | 0.94
+SBI Small Cap Fund - Direct Plan - Growth | SBI Mutual Fund | 23.14 | 0.93
+ABSL Small Cap Fund - Regular - Growth | Aditya Birla Sun Life MF | 22.38 | 0.9
+Axis Small Cap Fund - Regular - Growth | Axis Mutual Fund | 20.98 | 0.84
+Nippon India Small Cap Fund - Regular - Growth | Nippon India MF | 20.15 | 0.81
+DSP Small Cap Fund - Regular - Growth | DSP Mutual Fund | 20.08 | 0.8
+... (10 total rows)
+
+Query: 7. Total AUM growth by fund house, year over year
+year | fund_house | avg_aum_crore
+2022 | SBI Mutual Fund | 617500.0
+2022 | ICICI Prudential MF | 476500.0
+2022 | HDFC Mutual Fund | 440000.0
+2022 | Aditya Birla Sun Life MF | 281500.0
+2022 | Nippon India MF | 274000.0
+2022 | Kotak Mahindra MF | 271000.0
+... (40 total rows)
+
+Query: 8. SIP vs Lumpsum vs Redemption split, overall
+transaction_type | num_transactions | total_amount_inr | pct_of_transactions
+Lumpsum | 8095 | 2059821448 | 24.7
+Redemption | 4967 | 1244525491 | 15.15
+SIP | 19716 | 217233491 | 60.15
+
+Query: 9. Sector concentration — top sectors by total portfolio weight across all equity funds
+sector | total_weight_pct | num_funds_holding
+Banking | 652.26 | 30
+IT | 455.47 | 27
+Pharma | 407.45 | 22
+Automobile | 323.65 | 26
+Utilities | 265.54 | 19
+FMCG | 229.11 | 19
+... (10 total rows)
+
+Query: 10. Investor demographics — average SIP amount by age group
+age_group | num_sip_transactions | avg_sip_amount_inr
+56+ | 1478 | 11575.0
+46-55 | 2300 | 11137.0
+26-35 | 8063 | 10987.0
+18-25 | 2949 | 10953.0
+36-45 | 4926 | 10886.0

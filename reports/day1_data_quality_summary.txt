@@ -1,11 +1,24 @@
-BLUESTOCK FINTECH � CAPSTONE PROJECT I: MUTUAL FUND ANALYTICS
+BLUESTOCK FINTECH — CAPSTONE PROJECT I: MUTUAL FUND ANALYTICS
 Day 1 Data Quality Summary
 ============================================================
 
-Files loaded: 11
+Files loaded: 10
 
 Anomalies found:
   - 04_monthly_sip_inflows.csv: missing values -> {'yoy_growth_pct': 12}
 
 AMFI code validation (fund_master vs nav_history):
   - All 40 scheme codes in fund_master have matching entries in nav_history (40 unique codes present there). No missing codes found.
+LIVE API vs PROVIDED DATASET DISCREPANCY (found 13-Sep-2026):
+  - The provided fund_master.csv correctly maps amfi_code 125497 to
+    "HDFC Top 100 Fund - Direct Plan - Growth" (matches the project
+    brief's stated NAV anchor of Rs. 892.45, Oct 2024).
+  - However, calling the LIVE mfapi.in API today
+    (GET https://api.mfapi.in/mf/125497/latest) returns a DIFFERENT
+    fund: "SBI SMALL CAP FUND - Direct Plan - Growth" (NAV 215.6735,
+    11-Sep-2026).
+  - This confirms AMFI/mfapi.in scheme codes can be reassigned or
+    reused over time. Any live_nav_fetch.py run against the current
+    API should validate scheme_name from the response's meta block
+    against fund_master before trusting the fetched NAV — do not
+    assume a scheme_code always maps to the same fund.

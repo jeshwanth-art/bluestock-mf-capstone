@@ -22,6 +22,28 @@ bluestock_mf_capstone/
 └── README.md
 ```
 
+## Day 2 — Data Cleaning + SQL Database Design — STATUS
+
+All done and verified against your real data:
+
+| # | Task | Status |
+|---|------|--------|
+| 1 | Clean `nav_history.csv` (dates, sort, forward-fill, dedupe, validate) | ✅ 46,000 rows — 0 duplicates, 0 invalid NAV, 0 missing weekday NAVs found |
+| 2 | Clean `investor_transactions.csv` | ✅ 32,778 rows — 0 issues found (data was already clean) |
+| 3 | Clean `scheme_performance.csv` | ✅ 40 rows — 0 non-numeric, 0 negative Sharpe, 0 out-of-range expense ratios |
+| 4 | Design SQLite star schema | ✅ `sql/schema.sql` — 2 dim tables + 9 fact tables, with indexes |
+| 5 | Load all cleaned datasets into SQLite | ✅ `data/db/bluestock_mf.db` — all 10 tables, row counts verified against source CSVs |
+| 6 | Write 10 SQL queries | ✅ `sql/queries.sql` — all run successfully, sample output in `reports/day2_query_results.txt` |
+| 7 | Data dictionary | ✅ `reports/data_dictionary.md` |
+| 8 | Git commit "Day 2: Cleaned data + SQLite DB loaded" | ⏳ Your turn |
+
+### To finish Day 2
+```
+git add .
+git commit -m "Day 2: Cleaned data + SQLite DB loaded"
+git push
+```
+
 ## Day 1 — Project Setup + Data Ingestion (ETL) — STATUS
 
 | # | Task | Status |
@@ -70,6 +92,7 @@ automatically rather than trusting the code blindly. Full details in
    git remote add origin <your-new-repo-url>
    git push -u origin main
    ```
+   (Already done for this project — see Day 2 section above for the next commit.)
 
 ## Dataset Summary (actual, verified shapes)
 | File | Rows | Cols |

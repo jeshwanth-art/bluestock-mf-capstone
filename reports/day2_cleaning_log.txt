@@ -1,0 +1,13 @@
+BLUESTOCK FINTECH — CAPSTONE PROJECT I: MUTUAL FUND ANALYTICS
+Day 2 Data Cleaning Log
+============================================================
+clean nav_history: 46000 -> 46000 rows (removed 0 exact duplicates, 0 NAV<=0 rows, forward-filled 0 missing weekday NAVs)
+clean investor_transactions: 32778 -> 32778 rows (standardised transaction_type, 0 non-standard type values found, 0 amount<=0 rows removed, 0 unparseable dates removed, 0 unexpected kyc_status values found, 0 exact duplicates removed)
+clean scheme_performance: 40 -> 40 rows (0 non-numeric values coerced, 0 negative Sharpe ratio scheme(s): [], 0 scheme(s) with expense_ratio_pct outside 0.1%-2.5%, 0 duplicate amfi_codes removed)
+clean 01_fund_master.csv: 40 -> 40 rows (0 duplicates removed, nulls: none)
+clean 03_aum_by_fund_house.csv: 90 -> 90 rows (0 duplicates removed, nulls: none)
+clean 04_monthly_sip_inflows.csv: 48 -> 48 rows (0 duplicates removed, nulls: {'yoy_growth_pct': 12})
+clean 05_category_inflows.csv: 144 -> 144 rows (0 duplicates removed, nulls: none)
+clean 06_industry_folio_count.csv: 21 -> 21 rows (0 duplicates removed, nulls: none)
+clean 09_portfolio_holdings.csv: 322 -> 322 rows (0 duplicates removed, nulls: none)
+clean 10_benchmark_indices.csv: 8050 -> 8050 rows (0 duplicates removed, nulls: none)
