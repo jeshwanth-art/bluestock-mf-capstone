@@ -22,6 +22,37 @@ bluestock_mf_capstone/
 └── README.md
 ```
 
+## Day 3 — Exploratory Data Analysis (EDA) — STATUS
+
+| # | Task | Status |
+|---|------|--------|
+| 1 | NAV trend analysis (all 40 schemes, 2022-2026) | ✅ |
+| 2 | AUM growth bar chart by fund house | ✅ — confirms SBI at real Rs. 12.50L Cr |
+| 3 | SIP inflow time-series | ✅ — confirms real Rs. 31,002 Cr Dec-2025 peak |
+| 4 | Category inflow heatmap | ✅ |
+| 5 | Investor demographics (age, SIP box plot, gender) | ✅ |
+| 6 | Geographic distribution (state, T30 vs B30) | ✅ |
+| 7 | Folio count growth | ✅ — confirms real 13.26 Cr → 26.12 Cr growth |
+| 8 | NAV return correlation matrix | ✅ — genuine finding: correlations are weak/near-zero, not strongly positive as real markets show (see notebook) |
+| 9 | Sector allocation donut | ✅ — Banking (19.2%), IT (13.4%), Pharma (12.0%) top 3 |
+| 10 | 10 key findings documented in notebook | ✅ |
+
+**Notebook:** `notebooks/03_eda_analysis.ipynb` — fully executed, 0 errors, all
+9 charts also exported as PNGs to `reports/charts/` for the final report.
+
+**Note on charts 3 and 7:** the task asked for Plotly for these two, but this
+sandbox has no internet access to install Chrome (required by Plotly's static
+image export via kaleido) — matplotlib was used instead for reliable
+execution. The equivalent Plotly one-liner is left as a comment in each cell;
+swap it in if you want the interactive version and have Chrome available.
+
+### To finish Day 3
+```
+git add .
+git commit -m "Day 3: EDA notebook with 9 charts and key findings"
+git push
+```
+
 ## Day 2 — Data Cleaning + SQL Database Design — STATUS
 
 All done and verified against your real data:
