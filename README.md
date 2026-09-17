@@ -22,6 +22,39 @@ bluestock_mf_capstone/
 └── README.md
 ```
 
+## Day 4 — Fund Performance Analytics — STATUS
+
+| # | Task | Status |
+|---|------|--------|
+| 1 | Daily returns for all 40 funds | ✅ — distribution validated, no outliers |
+| 2 | CAGR (1yr/3yr/5yr) comparison table | ✅ |
+| 3 | Sharpe Ratio, ranked (Rf = 6.5%) | ✅ |
+| 4 | Sortino Ratio (downside deviation) | ✅ |
+| 5 | Alpha & Beta vs Nifty 100 (OLS regression) | ✅ — `alpha_beta.csv` |
+| 6 | Maximum Drawdown + worst drawdown date range | ✅ |
+| 7 | Fund Scorecard (composite, 0-100) | ✅ — `fund_scorecard.csv` |
+| 8 | Benchmark comparison chart + tracking error | ✅ — top 5 funds beat both Nifty 50 and Nifty 100 over 3yrs |
+
+**Notebook:** `notebooks/04_performance_analytics.ipynb` — fully executed, 0 errors.
+
+**Important finding — read before using `fact_performance` alongside computed
+metrics:** cross-checking this notebook's independently computed 3-year CAGR
+against the pre-provided `fact_performance.return_3yr_pct` column showed only
+**0.08 correlation** across all 40 funds. After testing and ruling out an
+as-of-date mismatch and a simple-vs-compounded-return mismatch, the most
+likely explanation is that `nav_history.csv` and `scheme_performance.csv` are
+two **independently simulated** datasets sharing the same fund list, not one
+mathematically derived from the other. Full investigation is in the notebook
+(Section 9) — prefer NAV-derived metrics over `fact_performance` for any
+further analysis in Days 5-7.
+
+### To finish Day 4
+```
+git add .
+git commit -m "Day 4: Fund performance analytics, scorecard, and benchmark comparison"
+git push
+```
+
 ## Day 3 — Exploratory Data Analysis (EDA) — STATUS
 
 | # | Task | Status |
