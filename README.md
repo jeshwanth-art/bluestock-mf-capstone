@@ -22,6 +22,69 @@ bluestock_mf_capstone/
 └── README.md
 ```
 
+## Day 6 — Advanced Analytics + Risk Metrics — STATUS
+
+| # | Task | Status |
+|---|------|--------|
+| 1 | Historical VaR (95%) + CVaR, all 40 funds | ✅ — `var_cvar_report.csv` |
+| 2 | Rolling 90-day Sharpe Ratio (5 funds) | ✅ — `reports/charts/12_rolling_sharpe.png` |
+| 3 | Investor cohort analysis (by first-tx year) | ✅ |
+| 4 | SIP continuation / at-risk analysis (6+ SIP investors, >35 day gap) | ✅ |
+| 5 | Fund recommendation logic (risk appetite → top 3 by Sharpe) | ✅ — `recommender.py` (also runs standalone) |
+| 6 | Sector concentration (HHI) | ✅ — `reports/charts/13_sector_concentration_hhi.png` |
+| 7 | 5 key insights documented | ✅ |
+
+**Notebook:** `notebooks/05_advanced_analytics.ipynb` — fully executed, 0 errors.
+
+**Real findings worth noting:** VaR/CVaR correctly rank Small Cap funds as
+highest tail-risk (as expected from real risk theory — Axis, ABSL, SBI, and
+Nippon Small Cap funds all show the worst 95% VaR). Rolling Sharpe ratios
+swing between roughly -5 and +7 across the sample period for every fund
+tested, showing a single point-in-time Sharpe figure can be misleading.
+
+### To finish Day 6
+```
+git add .
+git commit -m "Day 6: Advanced analytics, risk metrics, and fund recommender"
+git push
+```
+
+## Day 5 — Dashboard Development (Power BI / Tableau) — STATUS
+
+| # | Task | Status |
+|---|------|--------|
+| 1 | Connect to data, verify all tables | ✅ — covered in `reports/PowerBI_Build_Guide.docx` |
+| 2 | Page 1 — Industry Overview (KPIs, AUM trend, AUM by AMC) | ✅ — working preview + build guide |
+| 3 | Page 2 — Fund Performance (scatter, scorecard table, NAV vs benchmark) | ✅ — working preview + build guide |
+| 4 | Page 3 — Investor Analytics (state, split, age, monthly volume) | ✅ — working preview + build guide |
+| 5 | Page 4 — SIP & Market Trends (dual-axis, heatmap, top 5) | ✅ — working preview + build guide |
+| 6 | Interactivity (slicers, tooltips, drill-through) | ✅ — real, working filters on all 3 filterable pages; click-to-drill on the scorecard table |
+| 7 | Export to .pbix / PDF / PNG | ⚠️ — see limitation below |
+
+**Important — read before submitting Day 5:** this environment cannot run
+Power BI Desktop, so a real `.pbix` file could not be generated here. Instead:
+
+1. **`dashboard/bluestock_mf_dashboard.html`** — a fully working, real-data
+   interactive dashboard (all 4 pages, live filters, drill-through, tooltips)
+   built with the actual project data. Open it in any browser to see and use
+   exactly what the final Power BI dashboard should contain — also published
+   at the link Claude shared in the delivering conversation.
+2. **`reports/PowerBI_Build_Guide.docx`** — exact fields, chart types, DAX
+   measures, and slicer setup for every page, so recreating this as a real
+   `.pbix` in Power BI Desktop is a fast, guided build rather than guesswork.
+
+**You still need to:** open Power BI Desktop, follow the build guide, save
+as `bluestock_mf_dashboard.pbix`, and export `Dashboard.pdf` + 4 page PNGs
+from the real Power BI file for final submission.
+
+### To finish Day 5
+```
+git add .
+git commit -m "Day 5: Dashboard preview (HTML) and Power BI build guide"
+git push
+```
+Then build the real .pbix locally per the guide before final submission.
+
 ## Day 4 — Fund Performance Analytics — STATUS
 
 | # | Task | Status |
